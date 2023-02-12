@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6ef4f5d-dfaa-4bb9-b8a7-cf9969bae308" name="Changes" comment="" />
+    <list default="true" id="f6ef4f5d-dfaa-4bb9-b8a7-cf9969bae308" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/djsite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djsite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ER_Diagramm/Screenshot_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/gamesite/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/gamesite/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/gamesite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/gamesite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/gamesite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/gamesite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/gamesite/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/gamesite/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/second/views.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +36,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -25,18 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Python310/django/djsite/lab2/ER_Diagramm",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Python310\django\djsite\lab2\ER_Diagramm" />
+      <recent name="C:\Python310\django\djsite\lab2" />
+      <recent name="C:\Python310\django\djsite" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,6 +81,8 @@
       <workItem from="1675074072723" duration="2469000" />
       <workItem from="1675314112696" duration="3566000" />
       <workItem from="1675580435846" duration="2585000" />
+      <workItem from="1675926630279" duration="945000" />
+      <workItem from="1676207295432" duration="671000" />
     </task>
     <servers />
   </component>
