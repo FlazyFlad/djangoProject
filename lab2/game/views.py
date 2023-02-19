@@ -18,3 +18,4 @@ def pageBadRequest(request, *args, **argv):
 
 def internalServerError(request):
     return HttpResponse('<h1>Нет доступа к серверу</h1>')
+ 
