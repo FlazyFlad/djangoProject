@@ -20,6 +20,11 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('category', kwargs={'cat_id': self.pk})
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+        ordering = ['category_id']
+
 class Author(models.Model):
     author_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=255)
@@ -33,8 +38,15 @@ class News(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     author_id = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('post', kwargs={'post_id': self.pk})
+
+    class Meta:
+        verbose_name = "Наши новости"
+        verbose_name_plural = "Наши новости"
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)

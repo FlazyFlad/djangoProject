@@ -298,11 +298,14 @@
 {#</div>#}
 
 {% for p in news %}
-    <div class="nk-blog-post nk-blog-post-border-bottom">
+    <div class="nk-blog-post nk-blog-post-border-bottom" style="margin-bottom: 60px">
         <div class="row vertical-gap">
-            <div class="col-lg-3 col-md-5">
+            <div class="col-lg-3 col-md-6" style="padding: 15px">
                 <a href="{{ p.get_absolute_url }}" class="nk-post-img">
-                    <img src="assets/images/post-9-mid-square.jpg" alt="">
+
+                    {% if p.image %}
+                    <img src="{{ p.image.url }}" alt="">
+                    {% endif %}
 
                     <span class="nk-post-categories">
                         <span class="bg-main-{{p.category_id_id}}">{{p.category_id}}</span>
@@ -321,6 +324,8 @@
                 </div>
             </div>
         </div>
+{#    <div class="nk-gap"></div>#}
+{#    <a href="{{ p.get_absolute_url }}" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1" style="padding: 10px 210px">Read More</a>#}
     </div>
 {% endfor %}
 
