@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ title }}</title>
+
+    <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
+    <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
+    <meta name="author" content="_nK">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'game/css/vendor/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- FontAwesome -->
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/all.js' %}"></script>
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/v4-shims.js' %}"></script>
+
+    <!-- Photoswipe -->
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/photoswipe.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/default-skin/default-skin.css' %}">
+
+
+    <!-- GoodGames -->
+    <link rel="stylesheet" href="{% static 'game/css/goodgames.css' %}">
+
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="{% static 'game/css/vendor/jquery/dist/jquery.min.js' %}"></script>
+
+
+</head>
+<body>
+
+<header class="nk-header nk-header-opaque">
+
+
+
+<!-- START: Top Contacts -->
+<div class="nk-contacts-top">
+    <div class="container">
+    </div>
+</div>
+<!-- END: Top Contacts -->
+
+
+
+    <!--
+        START: Navbar
+
+        Additional Classes:
+            .nk-navbar-sticky
+            .nk-navbar-transparent
+            .nk-navbar-autohide
+    -->
+    <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide" style="margin-top: 0px">
+        <div class="container">
+            <div class="nk-nav-table">
+
+                <a href="{% url 'home' %}" class="nk-nav-logo">
+                    <img src="{% static '/game/images/logo.png' %}" alt="GoodGames" width="50">
+                </a>
+
+                <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+    {% for m in menu %}
+        <li>
+            <a href="{% url m.url_name %}">
+                {{ m.title }}
+            </a>
+        </li>
+    {% endfor %}
+
+{#        <li>#}
+{#            <a href="#">#}
+{#                Sign In#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li>#}
+{#            <a href="#">#}
+{#                Log In#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li>#}
+{#            <a href="{% url 'about' %}">#}
+{#                About#}
+{#            </a>#}
+{#        </li>#}
+
+                    </ul>
+        </li>
+                </ul>
+                <ul class="nk-nav nk-nav-right nk-nav-icons">
+
+                        <li class="single-icon d-lg-none">
+                            <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                            </a>
+                        </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Navbar -->
+
+</header>
+
+{% block content %}
+
+<form style="padding: 50px 400px" action="{% url 'add_post' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-error">{{form.non_field_errors}}</div>
+
+    {% for f in form %}
+
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label> <br> {{ f }}</p>
+
+{#        <div class="nk-gap"></div>#}
+{#        <input type="email" value="" name="email" class=" form-control" placeholder="Email">#}
+
+    <div class="form-error">{{ f.errors }}</div>
+
+    {% endfor %}
+
+
+    <button type="submit">Add</button>
+</form>
+
+{% endblock %}
+
+</body>
+</html>
