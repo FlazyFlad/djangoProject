@@ -1,0 +1,105 @@
+{% extends 'game/base.html' %}
+{% block content %}
+
+<div class="nk-gap-1"></div>
+<div class="container">
+    <ul class="nk-breadcrumbs">
+
+
+        <li><a href="{% url 'home' %}">Home</a></li>
+
+        <li><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <span class="fa fa-angle-right"></span> --></li>
+
+        <li><a href="{{ category_selected.get_absolute_url }}">{{ category_selected.name }}</a></li>
+
+        <li><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <span class="fa fa-angle-right"></span> --></li>
+
+        <li><a href="{{ news.get_absolute_url }}">Post</a></li>
+
+        <li><span>{{ news.title }}</span></li>
+</::after>
+
+    </ul>
+</div>
+
+
+<div class="nk-gap-1"></div>
+
+
+<div class="container">
+    <div class="row vertical-gap">
+        <div class="col-lg-8">
+
+            <div class="nk-post-img">
+                <img src="{{ news.image.url }}" alt="--">
+            </div>
+
+            <div class="nk-gap-1"></div>
+
+
+            <div class="nk-post-by">
+                        {{ news.get_create_time }}
+
+                        <div class="nk-post-categories">
+                            <span class="bg-main-{{ news.category_id_id }}">{{ news.category_id }}</span>
+                        </div>
+            </div>
+
+            <div class="nk-gap"></div>
+
+            <p>{{ news.content|linebreaks }}</p>
+
+            <div class="nk-gap"></div>
+
+            <div class="nk-gap"></div>
+
+        </div>
+        <div class="col-lg-4">
+            <!--
+                START: Sidebar
+
+                Additional Classes:
+                    .nk-sidebar-left
+                    .nk-sidebar-right
+                    .nk-sidebar-sticky
+            -->
+            <aside class="nk-sidebar nk-sidebar-right nk-sidebar-sticky">
+                <div class="nk-widget">
+    <div class="nk-widget-content">
+        <form action="#" class="nk-form nk-form-style-1" novalidate="novalidate">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type something...">
+                <button class="nk-btn nk-btn-color-main-1"><span class="ion-search"></span></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="nk-widget nk-widget-highlighted">
+    <h4 class="nk-widget-title"><span><span class="text-main-1">Popular</span> News</span></h4>
+    <div class="nk-widget-content">
+
+            {% for p in recomends %}
+
+            <div class="nk-widget-post">
+                <a href="{{ p.get_absolute_url }}" class="nk-post-image">
+                    {% if p.image %}
+                    <img src="{{ p.image.url }}" alt="">
+                    {% endif %}
+                </a>
+                <h3 class="nk-post-title"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatechars:39 }}</a></h3>
+                <div class="nk-post-date"><span class="fa fa-calendar"></span> {{p.get_create_time}}</div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+            </aside>
+            <!-- END: Sidebar -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+

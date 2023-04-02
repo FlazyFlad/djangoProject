@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ title }}</title>
+
+    <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
+    <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
+    <meta name="author" content="_nK">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'game/css/vendor/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- FontAwesome -->
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/all.js' %}"></script>
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/v4-shims.js' %}"></script>
+
+
+    <!-- Photoswipe -->
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/photoswipe.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/default-skin/default-skin.css' %}">
+
+
+    <!-- GoodGames -->
+    <link rel="stylesheet" href="{% static 'game/css/goodgames.css' %}">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="{% static 'game/css/vendor/jquery/dist/jquery.min.js' %}"></script>
+
+
+</head>
+
+<body>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;" class="d-flex justify-content-center">
+            <div style="width: 700px; margin-top: 16%">
+                <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
+
+                <div class="nk-gap-1"></div>
+                <form class="nk-form text-white" novalidate="novalidate" method="post">
+                    <div class="row vertical-gap">
+                        <div class="col-md-6">
+                            Use email and password:
+{##}
+{#                            <div class="nk-gap"></div>#}
+{#                            <input type="email" value="" name="email" class=" form-control" placeholder="Email">#}
+{##}
+{#                            <div class="nk-gap"></div>#}
+{#                            <input type="password" value="" name="password" class="required form-control" placeholder="Password">#}
+                            {% csrf_token %}
+                            <div class="nk-gap"></div>
+                            <div class="form-error">{{ form.non_field_errors }}</div>
+                            {% for f in form %}
+
+                                <p>{{ f }}</p>
+                                <div class="form-error">{{ f.errors }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="nk-gap-1"></div>
+                    <div class="row vertical-gap">
+                        <div class="col-md-6">
+                            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</button>
+                            <div class="nk-gap-1"></div>
+                            <div class="mnt-5">
+                                <small><a href="{% url 'register' %}">Not a member? Sign up</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
