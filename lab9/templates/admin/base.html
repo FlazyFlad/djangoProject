@@ -40,9 +40,14 @@
     {% block header %}
     <div id="header">
         <div id="branding">
-            <a href="{% url 'admin:index' %}" class="nk-nav-logo">
-                <img style="padding-left: 50px" src="{% static '/game/images/logo.png' %}" alt="GoodGames" width="50">
-            </a>
+
+        <div id="branding">
+        <a href="{% url 'admin:index' %}" class="nk-nav-logo">
+            <img style="padding-left: 25px" src="{% static '/game/images/logo.png' %}" alt="GoodGames" width="50">
+        </a>
+        {% block branding %}{% endblock %}
+        </div>
+
         </div>
         {% block usertools %}
         {% if has_permission %}
