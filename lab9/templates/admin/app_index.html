@@ -1,6 +1,7 @@
 {% extends "admin/index.html" %}
+{% load static %}
 {% load i18n %}
-
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
 {% block bodyclass %}{{ block.super }} app-{{ app_label }}{% endblock %}
 
 {% if not is_popup %}

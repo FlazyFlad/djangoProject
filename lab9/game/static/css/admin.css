@@ -1,0 +1,33 @@
+#header, .module caption{
+    position: relative;
+    margin-top: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.07rem;
+    -webkit-transition: .3s background-color;
+    -o-transition: .3s background-color;
+    transition: .3s background-color;
+    z-index: 1000;
+    will-change: background-color;
+    color: #dd163b;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+#site-name{
+    color: #dd163b;
+    text-decoration: none;
+}
+body{
+    position: relative;
+    background-color: #171e22;
+}
+.app-auth module{
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+a{
+    color: #FFFFFF !important;
+}
+
+.breadcrumbs{
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.9);
+}

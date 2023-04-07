@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import logout
 from django.http import HttpResponse, HttpResponseNotFound
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.urls import reverse_lazy
 from django.db.models import Q, Count
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -46,9 +46,22 @@ class AddPage(LoginRequiredMixin,DataMixin, CreateView):
         c_def = self.get_user_context(title="Add Page News")
         return context | c_def
 
-def contact(request):
-    return HttpResponse("FeedBack")
+# def contact(request):
+#     return HttpResponse("FeedBack")
 
+class ContactFormView(DataMixin, FormView):
+    form_class = ContactForm
+    template_name = 'game/contact.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Обратная связь")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return redirect('home')
 class GameDetail(DataMixin, DetailView):
     model = News
     template_name = 'game/post.html'

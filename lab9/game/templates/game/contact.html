@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'game/base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+
+    <form style="margin-top: 3%; margin-left: 30%" action="{% url 'contact' %}" method="post">
+    {% csrf_token %}
+
+    <div class="form-error">
+        {{ form.non_field_errors }}
+    </div>
+
+    {% for f in form %}
+
+        <div class="nk-post-text">
+        <p> <br><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> <br>{{ f }}</p>
+        </div>
+
+        <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+        <br>
+
+            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-dark-3">
+                <span>Отправить</span>
+                <span class="icon"><i class="ion-paper-airplane"></i></span>
+            </button>
+    </form>
+
+{% endblock %}
+

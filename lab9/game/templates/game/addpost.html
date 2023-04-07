@@ -3,15 +3,16 @@
 {% endblock %}
 {% block content %}
 
-<form style="padding: 50px 400px" action="{% url 'add_post' %}" method="post" enctype="multipart/form-data">
+<form style="margin-top: 1%; margin-left: 30%" action="{% url 'add_post' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="form-error">{{form.non_field_errors}}</div>
 
     {% for f in form %}
-
-    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label> <br> {{ f }}</p>
-
+        <div class="nk-post-text">
+            <br>
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label> <br>{{ f }}</p>
+        </div>
 {#        <div class="nk-gap"></div>#}
 {#        <input type="email" value="" name="email" class=" form-control" placeholder="Email">#}
 
@@ -19,8 +20,8 @@
 
     {% endfor %}
 
-
-    <button type="submit">Add</button>
+    <br>
+    <button class="nk-btn nk-btn-color-main-1" type="submit">Add</button>
 </form>
 
 {% endblock %}

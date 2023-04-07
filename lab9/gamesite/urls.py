@@ -22,7 +22,8 @@ from gamesite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('game.urls'))
+    path('capthca,', include('captcha.urls')),
+    path('', include('game.urls')),
 ]
 
 if settings.DEBUG:

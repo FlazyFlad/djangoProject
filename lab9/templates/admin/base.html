@@ -1,4 +1,5 @@
 {% load i18n static %}<!DOCTYPE html>
+{% load static %}
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
 <head>
@@ -11,7 +12,13 @@
   <link rel="stylesheet" href="{% static "admin/css/nav_sidebar.css" %}">
   <script src="{% static 'admin/js/nav_sidebar.js' %}" defer></script>
 {% endif %}
-{% block extrastyle %}{% endblock %}
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
+
+
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
 {% block extrahead %}{% endblock %}
 {% block responsive %}
@@ -33,7 +40,9 @@
     {% block header %}
     <div id="header">
         <div id="branding">
-        {% block branding %}{% endblock %}
+            <a href="{% url 'admin:index' %}" class="nk-nav-logo">
+                <img style="padding-left: 50px" src="{% static '/game/images/logo.png' %}" alt="GoodGames" width="50">
+            </a>
         </div>
         {% block usertools %}
         {% if has_permission %}
