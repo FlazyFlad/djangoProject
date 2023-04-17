@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="{% static '/game/images/logo.png' %}" type="image/png">
+
+    <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
+    <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
+    <meta name="author" content="_nK">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'game/css/vendor/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'game/css/vendor/ionicons/css/ionicons.min.css' %}">
+
+    <!-- FontAwesome -->
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/all.js' %}"></script>
+    <script defer src="{% static 'game/css/vendor/fontawesome-free/js/v4-shims.js' %}"></script>
+
+
+    <!-- Photoswipe -->
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/photoswipe.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/vendor/photoswipe/dist/default-skin/default-skin.css' %}">
+
+
+    <!-- GoodGames -->
+    <link rel="stylesheet" href="{% static 'game/css/goodgames.css' %}">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="{% static 'game/css/vendor/jquery/dist/jquery.min.js' %}"></script>
+
+
+</head>
+
+
+<!--
+    Additional Classes:
+        .nk-page-boxed
+-->
+<body>
+
+<!--
+    Additional Classes:
+        .nk-header-opaque
+-->
+{#  {% load cache %} #}
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+
+<!-- START: Page Background -->
+
+{#    <img class="nk-page-background-top" src="assets/images/bg-top-5.png" alt="">#}
+{#    <img class="nk-page-background-bottom" src="assets/images/bg-bottom.png" alt="">#}
+
+<!-- END: Page Background -->
+
+
+
+{% block search %}
+{% endblock %}
+
+
+<!-- START: Scripts -->
+
+<!-- END: Scripts -->
+
+
+
+</body>
+</html>
