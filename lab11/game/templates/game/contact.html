@@ -1,0 +1,51 @@
+{% extends 'game/base_site.html' %}
+
+{% block content %}
+<div class="nk-main">
+
+            <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+    <ul class="nk-breadcrumbs">
+        <li><a href="{% url 'contact' %}">{{ title }}</a></li>
+        <li><span>{{ title }}</span></li>
+    </ul>
+</div>
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+
+
+
+
+<div class="container">
+    <div class="row vertical-gap">
+        <div class="col-lg-8">
+            <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-error">
+            {{ form.non_field_errors }}
+        </div>
+
+        {% for f in form %}
+
+            <div class="nk-post-text">
+            <p> <br><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> <br>{{ f }}</p>
+            </div>
+
+            <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+            <br>
+
+                <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-dark-3">
+                    <span>Отправить</span>
+                    <span class="icon"><i class="ion-paper-airplane"></i></span>
+                </button>
+        </form>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}
+
